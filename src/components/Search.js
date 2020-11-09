@@ -1,5 +1,4 @@
-import logo from '../logo.svg';
-import React , {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import {setPhotos, setLoading, setPages,setText, setColor} from "../actions"
 import Unsplash, { toJson } from "unsplash-js";
@@ -41,7 +40,7 @@ const Search = props => {
   };
   const handleClickColor = e => {
     props.setColor(
-      e.target.value == props.color ? "" : e.target.value
+      e.target.value === props.color ? "" : e.target.value
     )
   }
   const handleClickRecomendation = (e) => {
@@ -54,7 +53,7 @@ const Search = props => {
       key={el}
       style={{backgroundColor: el}}
       type="button"
-      className={props.color==el ? 'color-active' : 'color' }
+      className={props.color === el ? 'color-active' : 'color' }
       onClick={handleClickColor}
       value={el}
     >

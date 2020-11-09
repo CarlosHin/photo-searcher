@@ -11,7 +11,7 @@ const unsplash = new Unsplash({
 
 
 
-const Carousel = props => {
+const Carousel = (props) => {
 
   const peticion = () => {
     setLoading(true)
@@ -38,7 +38,7 @@ const Carousel = props => {
 
 
 
-  if(props.isLoading && props.photos.length == 0 )
+  if(props.isLoading && props.photos.length === 0 )
     return (
       <h1>Loading</h1>
     )
@@ -55,14 +55,14 @@ const Carousel = props => {
     }
     </div>
     {
-      props.actualPage != 0 && props.actualPage != 0 &&
+      props.actualPage !== 0 && props.actualPage !== 0 &&
       <div className="container-pages">
         <p>{`${props.actualPage}/${props.totalPages}`}</p>
       </div>
     }
 
     {
-      props.actualPage != 0 && props.actualPage < props.totalPages &&
+      props.actualPage !== 0 && props.actualPage < props.totalPages &&
       <div className="container-btnLoader">
       {
         !props.isLoading ?
