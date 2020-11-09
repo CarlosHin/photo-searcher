@@ -1,0 +1,41 @@
+.carousel {
+  overflow: visible;
+  width: 100%;
+  position: relative;
+
+}
+
+.carousel__container {
+  overflow: visible;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+}
+
+.carousel__container:hover .carousel-item:hover {
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+  opacity: 1;
+  z-index:1;
+}
+
+.container-btnLoader {
+  display: flex;
+  justify-content: center;
+}
+
+.container-pages {
+  display: flex;
+  justify-content: center;
+  color:white;
+}

@@ -1,0 +1,19 @@
+.header {
+  align-items: center;
+  background: #2B303A;
+  color: white;
+  display: flex;
+  height: 100px;
+  top: 0px;
+  width: 100%;
+}
+
+.header i {
+  margin-left: 30px;
+  width: 40px;
+  font-size: 30px;
+}
+header span {
+  margin-left: 10px;
+  font-size: 10px;
+}

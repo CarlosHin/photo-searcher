@@ -1,0 +1,122 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  border-radius: 0px 0px 40px 40px;
+}
+
+.main__title {
+  color: white;
+  font-size: 25px;
+}
+.color_group{
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+.input {
+  background-color: rgba(22,144,255,0.1);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  /* // width: 70%; */
+}
+
+.btn {
+  background-color: rgba(0,0,0,0);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  height: 50px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  cursor:pointer;
+}
+
+
+.color {
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  height: 25px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  opacity: 0.2;
+  cursor:pointer;
+  margin:3px;
+}
+
+.color-active {
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid black;
+  border-radius: 25px;
+  color: white;
+  height: 40px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  opacity: 1;
+  cursor:pointer;
+  margin:3px;
+}
+
+.color:hover {
+  height: 40px;
+}
+
+.recomendation_group{
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.recomendation{
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+  border: 2px solid black;
+  border-radius: 25px;
+  color: white;
+  height: 25px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  opacity: 1;
+  cursor:pointer;
+  margin:3px;
+}
+.recomendation:hover{
+    background-color: rgba(255,255,255,0.8);
+
+
+}
+
+
+
+
+::placeholder {
+  color: white;
+}
