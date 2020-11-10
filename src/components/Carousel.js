@@ -4,36 +4,27 @@ import CarouselItem from './CarouselItem.js';
 import '../assets/styles/Carousel.css';
 import {setPhotos, setPages, setLoading} from "../actions"
 
-import Unsplash, { toJson } from "unsplash-js";
-const unsplash = new Unsplash({
-  accessKey: "YdwyPcttzIAetr16_G3AZ-mHAITgrQeO8T0ODhytZGQ",
-});
+import {requestMore} from "../utils/unplash"
+
+
 
 
 
 const Carousel = (props) => {
 
-  const peticion = () => {
-    setLoading(true)
-
-    unsplash.search
-    .photos(props.text,props.actualPage+1, 10,{ orientation: "portrait", color: props.color })
-    .then(toJson)
-    .then((json) => {
-      props.setPages(
-        {
-          actualPage: props.actualPage+1,
-          totalPages :json.total_pages
-        }
-      )
-      props.setLoading(false)
-
-      props.setPhotos([...props.photos,...json.results])
-    })
-    .catch((err)=> alert("Error, limite de peticiones alcanzado"))
-  }
   const handleLoadMore = ()=>{
-    peticion()
+    setLoading(true)
+    requestMore(props.text,props.color,props.actualPage).then((json) => {
+        props.setPages(
+          {
+            actualPage: props.actualPage+1,
+            totalPages :json.total_pages
+          }
+        )
+        props.setLoading(false)
+  
+        props.setPhotos([...props.photos,...json.results])
+    });
   }
 
 

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {setPhotos, setLoading, setPages,setText, setColor} from "../actions"
-import Unsplash, { toJson } from "unsplash-js";
 import '../assets/styles/Search.css';
+import {request} from "../utils/unplash"
 
+import Unsplash, { toJson } from "unsplash-js";
 const unsplash = new Unsplash({
   accessKey: "YdwyPcttzIAetr16_G3AZ-mHAITgrQeO8T0ODhytZGQ",
 });
@@ -11,18 +12,19 @@ const unsplash = new Unsplash({
 
 const Search = props => {
 
-  const peticion = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setPages({
       actualPage: 0,
       totalPages :0
     })
+    props.setPhotos([])
+
     props.setLoading(true);
-    unsplash.search
-    .photos(props.text, 1, 10,{ orientation: "portrait", color: props.color })
-    .then(toJson)
-    .then((json) => {
-      props.setPhotos(json.results)
+    request(props.text, props.color, props.actualPage).then(json =>{
+      console.log(json)
       if(json.results.length > 0){
+        props.setPhotos(json.results)
         props.setPages({
           actualPage: 1,
           totalPages :json.total_pages
@@ -30,14 +32,10 @@ const Search = props => {
       }
       props.setLoading(false);
     })
-    .catch((err)=> alert("Error, limite de peticiones alcanzado"))
 
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    peticion();
   };
+
+
   const handleClickColor = e => {
     props.setColor(
       e.target.value === props.color ? "" : e.target.value
