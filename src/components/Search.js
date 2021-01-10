@@ -83,7 +83,7 @@ const Search = props => {
         {colorList}
       </div>
 
-      <input type="submit" className="btn" value="Buscar"/>
+      <input type="submit" className="btn-lg" value="Buscar"/>
     </form>
 
     </>

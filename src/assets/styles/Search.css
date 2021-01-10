@@ -51,6 +51,20 @@
   cursor:pointer;
 }
 
+.btn-lg {
+  background-color: rgba(0,0,0,0);
+  border: 2px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 23px;
+  height: 70px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 0px 20px;
+  cursor:pointer;
+}
+
 
 .color {
   transition: all 0.3s;
